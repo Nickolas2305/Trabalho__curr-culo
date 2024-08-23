@@ -1,2 +1,2 @@
-# Trabalho__curr-culo
+# Trabalho__curriculo
 Trabalho 1 - Gerador de currículos
