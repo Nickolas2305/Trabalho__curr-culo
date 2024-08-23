@@ -4,25 +4,30 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="formulario.css">
-	<title>Cadastro currículo</title>
+	<title>Cadastro de currículo</title>
 </head>
 <body>
 
+	<!-- Cabeçalho -->
 	<div id="campo">
 		<h1 id="titulo">Cadastro de currículo</h1>
 		<p id="subtitulo">Preencha os campos com seus dados:</p>
 		<br>
 	</div>
 
-	<form>
 
-		<fieldset class="grupo">
+	<form>	<!-- Inicio formulario -->
+
+		<!-- Campo para nome e sobrenome -->
+		<fieldset class="grupo"> 
 			
+			<!-- Nome -->
 			<div id="campo">
 				<label for="nome">Nome</label>
 				<input type="text" name="nome" id="nome">
 			</div>
 
+			<!-- Sobrenome -->
 			<div id="campo">
 				<label for="sobrenome">Sobrenome</label>
 				<input type="text" name="sobrenome" id="sobrenome">
@@ -30,11 +35,41 @@
 
 		</fieldset>
 
+		<!-- Campo de data de nasc e idade -->
+		<fieldset class="grupo">
+			
+			<!-- Data de nascimento -->
+			<div id="campo"> Data de nascimento
+				<input type="date" name="data_aniversario" id="data_aniversario">
+			</div>
+
+			<!-- Idade -->
+			<div id="campo">
+				<label for="idade">Idade</label>
+				<input type="number" name="idade" id="idade">
+			</div>
+
+		</fieldset>
+
+		<!-- email -->
 		<div id="campo">
 			<label for="email">e-mail</label>
 			<input type="Email" name="email" id="email">
 		</div>
 
+		<!-- Endereço -->
+		<div id="campo">
+			<label for="endereco">Endereço</label>
+			<input type="text" name="endereco" id="endereco">
+		</div>
+
+		<!-- Telefone -->
+		<div id="campo">
+			<label for="telefone">Telefone</label>
+			<input type="tel" name="telefone" id="telefone" placeholder="(DDD) 9-XXXX-XXXX">
+		</div>
+
+		<!-- Sexo -->
 		<div id="campo">
 			<label>Sexo</label>
 				<label>
@@ -50,6 +85,7 @@
 				</label>
 		</div>
 
+		<!-- Escolaridade -->
 		<div id="campo">
 			<label for="escolaridade">Escolaridade</label>
 			<select id="escolaridade">
@@ -63,9 +99,10 @@
 			</select>
 		</div>
 
+		<!-- Estado civil -->
 		<div id="campo">
-			<label for="escolaridade">Estado civil</label>
-			<select id="escolaridade">
+			<label for="estado_civil">Estado civil</label>
+			<select id="estado_civil">
 				<option selected disabled value="">Selecione...</option>
 				<option>Solteiro</option>
 				<option>Casado</option>
@@ -74,8 +111,7 @@
 			</select>
 		</div>
 
-	</form>
-
+	</form> <!-- Fim formulario -->
 
 </body>
 </html>
