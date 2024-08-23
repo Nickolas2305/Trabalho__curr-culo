@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="formulario.css">
+	<title>Cadastro currículo</title>
+</head>
+<body>
+
+	<div id="campo">
+		<h1 id="titulo">Cadastro de currículo</h1>
+		<p id="subtitulo">Preencha os campos com seus dados:</p>
+		<br>
+	</div>
+
+	<form>
+
+		<fieldset class="grupo">
+			
+			<div id="campo">
+				<label for="nome">Nome</label>
+				<input type="text" name="nome" id="nome">
+			</div>
+
+			<div id="campo">
+				<label for="sobrenome">Sobrenome</label>
+				<input type="text" name="sobrenome" id="sobrenome">
+			</div>
+
+		</fieldset>
+
+		<div id="campo">
+			<label for="email">e-mail</label>
+			<input type="Email" name="email" id="email">
+		</div>
+
+		<div id="campo">
+			<label>Sexo</label>
+				<label>
+					<input type="radio" name="sexo" value="masculino"> Masculino
+				</label>
+
+				<label>
+					<input type="radio" name="sexo" value="feminino"> Feminino
+				</label>
+
+				<label>
+					<input type="radio" name="sexo" value="outro"> Outro
+				</label>
+		</div>
+
+		<div id="campo">
+			<label for="escolaridade">Escolaridade</label>
+			<select id="escolaridade">
+				<option selected disabled value="">Selecione...</option>
+				<option>Ensino Fundamental Incompleto</option>
+				<option>Ensino Fundamental Completo</option>
+				<option>Ensino Médio Incompleto</option>
+				<option>Ensino Médio Completo</option>
+				<option>Ensino Superior Incompleto</option>
+				<option>Ensino Superior Completo</option>
+			</select>
+		</div>
+
+		<div id="campo">
+			<label for="escolaridade">Estado civil</label>
+			<select id="escolaridade">
+				<option selected disabled value="">Selecione...</option>
+				<option>Solteiro</option>
+				<option>Casado</option>
+				<option>Divorciado</option>
+				<option>Viúvo</option>
+			</select>
+		</div>
+
+	</form>
+
+
+</body>
+</html>
