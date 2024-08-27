@@ -49,6 +49,6 @@ input, select{
 .campo input:focus, .campo select:focus{
 	background: white;
 	outline: none;
-    border-color: #80bdff; /* Bordas azuis ao focar, consistente com Bootstrap */
+    border-color: #80bdff; 
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
