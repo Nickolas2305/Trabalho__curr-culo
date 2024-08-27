@@ -1,0 +1,54 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.titulo{
+	font-family: sans-serif ;
+	color: black ;
+	margin-left: 7%;
+}
+
+.subtitulo{
+	font-family: sans-serif ;
+	color: black ;
+	margin-left: 10%;
+}
+
+fieldset{
+	border: 0;
+}
+
+body {
+    background-color: white;
+    font-family: sans-serif;
+    font-size: 1em;
+    color: black;
+    margin: 2% auto;
+    justify-content: center;
+    max-width: 800px; 
+}
+
+
+input, select{
+	border-radius: 5px;
+}
+
+.campo label{
+	margin-bottom: 0.2em;
+	color: gray;
+	display: block;
+}
+
+.campo input[type="text"], .campo input[type="email"], .campo select {
+    padding: 0.5em; 
+    border: 1px solid #ced4da;
+    display: block;
+}
+
+.campo input:focus, .campo select:focus{
+	background: white;
+	outline: none;
+    border-color: #80bdff; /* Bordas azuis ao focar, consistente com Bootstrap */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
