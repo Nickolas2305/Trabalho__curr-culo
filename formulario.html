@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="formulario.css">
 	<title>Cadastro de currículo</title>
 </head>
@@ -16,77 +17,78 @@
 	</div>
 
 
-	<form>	<!-- Inicio formulario -->
+	<form class="container">	<!-- Inicio formulario -->
 
 		<!-- Campo para nome e sobrenome -->
-		<fieldset class="grupo"> 
-			
-			<!-- Nome -->
-			<div id="campo">
-				<label for="nome">Nome</label>
-				<input type="text" name="nome" id="nome">
-			</div>
+		<div class="form-row"> 
+	        
+	        <!-- Nome -->
+	        <div class="form-group col-md-6">
+	            <label for="nome">Nome</label>
+	            <input type="text" class="form-control" name="nome" id="nome">
+	        </div>
 
-			<!-- Sobrenome -->
-			<div id="campo">
-				<label for="sobrenome">Sobrenome</label>
-				<input type="text" name="sobrenome" id="sobrenome">
-			</div>
-
-		</fieldset>
+	        <!-- Sobrenome -->
+	        <div class="form-group col-md-6">
+	            <label for="sobrenome">Sobrenome</label>
+	            <input type="text" class="form-control" name="sobrenome" id="sobrenome">
+	        </div>
+	    </div>
 
 		<!-- Campo de data de nasc e idade -->
-		<fieldset class="grupo">
-			
-			<!-- Data de nascimento -->
-			<div id="campo"> Data de nascimento
-				<input type="date" name="data_aniversario" id="data_aniversario">
-			</div>
+		 <div class="form-row">
+        
+	        <!-- Data de nascimento -->
+	        <div class="form-group col-md-6">
+	            <label for="data_aniversario">Data de nascimento</label>
+	            <input type="date" class="form-control" name="data_aniversario" id="data_aniversario">
+	        </div>
 
-			<!-- Idade -->
-			<div id="campo">
-				<label for="idade">Idade</label>
-				<input type="number" name="idade" id="idade">
-			</div>
+	        <!-- Idade -->
+	        <div class="form-group col-md-6">
+	            <label for="idade">Idade</label>
+	            <input type="number" class="form-control" name="idade" id="idade">
+	        </div>
+	    </div>
 
-		</fieldset>
+			<!-- email -->
+			<div class="form-group">
+		        <label for="email">E-mail</label>
+		        <input type="email" class="form-control" name="email" id="email">
+	    	</div>
 
-		<!-- email -->
-		<div id="campo">
-			<label for="email">e-mail</label>
-			<input type="Email" name="email" id="email">
-		</div>
+			 <!-- Endereço -->
+		    <div class="form-group">
+		        <label for="endereco">Endereço</label>
+		        <input type="text" class="form-control" name="endereco" id="endereco">
+		    </div>
 
-		<!-- Endereço -->
-		<div id="campo">
-			<label for="endereco">Endereço</label>
-			<input type="text" name="endereco" id="endereco">
-		</div>
+		 	<!-- Telefone -->
+		    <div class="form-group">
+		        <label for="telefone">Telefone</label>
+		        <input type="tel" class="form-control" name="telefone" id="telefone" placeholder="(DDD) 9-XXXX-XXXX">
+		    </div>
 
-		<!-- Telefone -->
-		<div id="campo">
-			<label for="telefone">Telefone</label>
-			<input type="tel" name="telefone" id="telefone" placeholder="(DDD) 9-XXXX-XXXX">
-		</div>
+			<!-- Sexo -->
+			<div class="form-group">
+	        	<label>Sexo</label><br>
+	        		<div class="form-check form-check-inline">
+		            	<input class="form-check-input" type="radio" name="sexo" value="masculino" id="masculino">
+		            	<label class="form-check-label" for="masculino">Masculino</label>
+	        		</div>
+	        		<div class="form-check form-check-inline">
+			            <input class="form-check-input" type="radio" name="sexo" value="feminino" id="feminino">
+			            <label class="form-check-label" for="feminino">Feminino</label>
+	        		</div>
+	        		<div class="form-check form-check-inline">
+			            <input class="form-check-input" type="radio" name="sexo" value="outro" id="outro">
+			            <label class="form-check-label" for="outro">Outro</label>
+	        		</div>
+	    	</div>
 
-		<!-- Sexo -->
-		<div id="campo">
-			<label>Sexo</label>
-				<label>
-					<input type="radio" name="sexo" value="masculino"> Masculino
-				</label>
-
-				<label>
-					<input type="radio" name="sexo" value="feminino"> Feminino
-				</label>
-
-				<label>
-					<input type="radio" name="sexo" value="outro"> Outro
-				</label>
-		</div>
 
 		<!-- Escolaridade -->
-		<div id="campo">
+		<div class="form-group" >
 			<label for="escolaridade">Escolaridade</label>
 			<select id="escolaridade">
 				<option selected disabled value="">Selecione...</option>
@@ -100,7 +102,7 @@
 		</div>
 
 		<!-- Estado civil -->
-		<div id="campo">
+		<div class="form-group">
 			<label for="estado_civil">Estado civil</label>
 			<select id="estado_civil">
 				<option selected disabled value="">Selecione...</option>
@@ -111,7 +113,17 @@
 			</select>
 		</div>
 
+
+
+		<!-- Botão de Impressão -->
+		<button type="submit" class="btn btn-primary">Imprimir currículo</button>
+
 	</form> <!-- Fim formulario -->
+
+	<!-- Add do Bootstrap JS e dependências -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>
