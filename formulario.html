@@ -1,129 +1,121 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="formulario.css">
-	<title>Cadastro de currículo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Currículo</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="formulario.css">
 </head>
 <body>
 
-	<!-- Cabeçalho -->
-	<div id="campo">
-		<h1 id="titulo">Cadastro de currículo</h1>
-		<p id="subtitulo">Preencha os campos com seus dados:</p>
-		<br>
-	</div>
+<div class="container">
+    <h1 class="titulo">Cadastro de Currículo</h1>
+    <p class="subtitulo">Preencha os campos com seus dados:</p>
 
+    <form action="gerar_curriculo.php" method="POST">
+        <!-- Dados Pessoais -->
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" id="nome" name="nome" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="sobrenome">Sobrenome</label>
+                <input type="text" class="form-control" id="sobrenome" name="sobrenome" required>
+            </div>
+        </div>
 
-	<form class="container">	<!-- Inicio formulario -->
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="data_nascimento">Data de Nascimento</label>
+                <input type="date" class="form-control" id="data_nascimento" name="data_nascimento" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="idade">Idade</label>
+                <input type="number" class="form-control" id="idade" name="idade" required>
+            </div>
+        </div>
 
-		<!-- Campo para nome e sobrenome -->
-		<div class="form-row"> 
-	        
-	        <!-- Nome -->
-	        <div class="form-group col-md-6">
-	            <label for="nome">Nome</label>
-	            <input type="text" class="form-control" name="nome" id="nome">
-	        </div>
+        <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
 
-	        <!-- Sobrenome -->
-	        <div class="form-group col-md-6">
-	            <label for="sobrenome">Sobrenome</label>
-	            <input type="text" class="form-control" name="sobrenome" id="sobrenome">
-	        </div>
-	    </div>
+        <div class="form-group">
+            <label for="endereco">Endereço</label>
+            <input type="text" class="form-control" id="endereco" name="endereco" required>
+        </div>
 
-		<!-- Campo de data de nasc e idade -->
-		 <div class="form-row">
-        
-	        <!-- Data de nascimento -->
-	        <div class="form-group col-md-6">
-	            <label for="data_aniversario">Data de nascimento</label>
-	            <input type="date" class="form-control" name="data_aniversario" id="data_aniversario">
-	        </div>
+        <div class="form-group">
+            <label for="telefone">Telefone</label>
+            <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(DDD) 9-XXXX-XXXX" required>
+        </div>
 
-	        <!-- Idade -->
-	        <div class="form-group col-md-6">
-	            <label for="idade">Idade</label>
-	            <input type="number" class="form-control" name="idade" id="idade">
-	        </div>
-	    </div>
+        <!-- Escolaridade -->
+        <div class="form-group">
+            <label for="escolaridade">Escolaridade</label>
+            <select class="form-control" id="escolaridade" name="escolaridade">
+                <option selected disabled value="">Selecione...</option>
+                <option>Ensino Fundamental Incompleto</option>
+                <option>Ensino Fundamental Completo</option>
+                <option>Ensino Médio Incompleto</option>
+                <option>Ensino Médio Completo</option>
+                <option>Ensino Superior Incompleto</option>
+                <option>Ensino Superior Completo</option>
+            </select>
+        </div>
 
-			<!-- email -->
-			<div class="form-group">
-		        <label for="email">E-mail</label>
-		        <input type="email" class="form-control" name="email" id="email">
-	    	</div>
+        <!-- Estado civil -->
+        <div class="form-group">
+            <label for="estado_civil">Estado civil</label>
+            <select class="form-control" id="estado_civil" name="estado_civil">
+                <option selected disabled value="">Selecione...</option>
+                <option>Solteiro</option>
+                <option>Casado</option>
+                <option>Divorciado</option>
+                <option>Viúvo</option>
+            </select>
+        </div>
 
-			 <!-- Endereço -->
-		    <div class="form-group">
-		        <label for="endereco">Endereço</label>
-		        <input type="text" class="form-control" name="endereco" id="endereco">
-		    </div>
+        <!-- Experiências Profissionais Dinâmicas -->
+        <div id="experiencias_profissionais">
+            <h5>Experiências Profissionais</h5>
+            <div class="form-group">
+                <label for="empresa_1">Empresa</label>
+                <input type="text" class="form-control" id="empresa_1" name="empresa[]">
+                <label for="cargo_1">Cargo</label>
+                <input type="text" class="form-control" id="cargo_1" name="cargo[]">
+                <label for="periodo_1">Período</label>
+                <input type="text" class="form-control" id="periodo_1" name="periodo[]">
+            </div>
+        </div>
+        <button type="button" class="btn btn-secondary mb-3" id="add_experiencia">+ Adicionar Experiência</button>
 
-		 	<!-- Telefone -->
-		    <div class="form-group">
-		        <label for="telefone">Telefone</label>
-		        <input type="tel" class="form-control" name="telefone" id="telefone" placeholder="(DDD) 9-XXXX-XXXX">
-		    </div>
+        <button type="submit" class="btn btn-primary">Gerar Currículo</button>
+    </form>
+</div>
 
-			<!-- Sexo -->
-			<div class="form-group">
-	        	<label>Sexo</label><br>
-	        		<div class="form-check form-check-inline">
-		            	<input class="form-check-input" type="radio" name="sexo" value="masculino" id="masculino">
-		            	<label class="form-check-label" for="masculino">Masculino</label>
-	        		</div>
-	        		<div class="form-check form-check-inline">
-			            <input class="form-check-input" type="radio" name="sexo" value="feminino" id="feminino">
-			            <label class="form-check-label" for="feminino">Feminino</label>
-	        		</div>
-	        		<div class="form-check form-check-inline">
-			            <input class="form-check-input" type="radio" name="sexo" value="outro" id="outro">
-			            <label class="form-check-label" for="outro">Outro</label>
-	        		</div>
-	    	</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script>
+    $(document).ready(function () {
+        let experienciaCount = 1;
 
-
-		<!-- Escolaridade -->
-		<div class="form-group" >
-			<label for="escolaridade">Escolaridade</label>
-			<select id="escolaridade">
-				<option selected disabled value="">Selecione...</option>
-				<option>Ensino Fundamental Incompleto</option>
-				<option>Ensino Fundamental Completo</option>
-				<option>Ensino Médio Incompleto</option>
-				<option>Ensino Médio Completo</option>
-				<option>Ensino Superior Incompleto</option>
-				<option>Ensino Superior Completo</option>
-			</select>
-		</div>
-
-		<!-- Estado civil -->
-		<div class="form-group">
-			<label for="estado_civil">Estado civil</label>
-			<select id="estado_civil">
-				<option selected disabled value="">Selecione...</option>
-				<option>Solteiro</option>
-				<option>Casado</option>
-				<option>Divorciado</option>
-				<option>Viúvo</option>
-			</select>
-		</div>
-
-
-
-		<!-- Botão de Impressão -->
-		<button type="submit" class="btn btn-primary">Imprimir currículo</button>
-
-	</form> <!-- Fim formulario -->
-
-	<!-- Add do Bootstrap JS e dependências -->
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+        $('#add_experiencia').click(function () {
+            experienciaCount++;
+            $('#experiencias_profissionais').append(`
+                <div class="form-group">
+                    <label for="empresa_${experienciaCount}">Empresa</label>
+                    <input type="text" class="form-control" id="empresa_${experienciaCount}" name="empresa[]">
+                    <label for="cargo_${experienciaCount}">Cargo</label>
+                    <input type="text" class="form-control" id="cargo_${experienciaCount}" name="cargo[]">
+                    <label for="periodo_${experienciaCount}">Período</label>
+                    <input type="text" class="form-control" id="periodo_${experienciaCount}" name="periodo[]">
+                    <span class="remove-button" onclick="$(this).parent().remove();">Remover</span>
+                </div>
+            `);
+        });
+    });
+</script>
 </body>
 </html>
